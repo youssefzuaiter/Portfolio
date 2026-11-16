@@ -1,0 +1,10 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="10" fill="#0a1a30"/>
+  <g stroke="#4fd1ff" stroke-width="3" fill="none">
+    <path d="M6,18 L6,6 L18,6"/>
+    <path d="M46,6 L58,6 L58,18"/>
+    <path d="M58,46 L58,58 L46,58"/>
+    <path d="M18,58 L6,58 L6,46"/>
+  </g>
+  <text x="32" y="41" text-anchor="middle" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="24" font-weight="700" fill="#eaf2ff">YZ</text>
+</svg>
