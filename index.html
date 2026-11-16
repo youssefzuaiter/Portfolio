@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youssef Zuaiter — AI Engineer</title>
+<meta name="description" content="Youssef Zuaiter — AI Engineering student. Differential privacy, deepfake detection, embedded systems, cloud-native ML.">
+
+<link rel="icon" type="image/svg+xml" href="Portfolio Assets/favicon.svg">
+<link rel="icon" type="image/png" href="Portfolio Assets/favicon.png">
+<link rel="apple-touch-icon" href="Portfolio Assets/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Youssef Zuaiter — AI Engineer">
+<meta property="og:description" content="AI Engineering student — differential privacy, deepfake detection, embedded systems, cloud-native ML. 5 projects, 62 certifications, real numbers attached.">
+<meta property="og:image" content="Portfolio Assets/og_image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Youssef Zuaiter — AI Engineer">
+<meta name="twitter:description" content="AI Engineering student — differential privacy, deepfake detection, embedded systems, cloud-native ML.">
+<meta name="twitter:image" content="Portfolio Assets/og_image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a1a30;
+    --bg-elev:#0e2140;
+    --surface:#0f2542;
+    --surface-hover:#13294c;
+    --border:rgba(125,185,255,0.22);
+    --border-strong:rgba(125,185,255,0.42);
+    --text:#eaf2ff;
+    --text-soft:#a6bfdc;
+    --text-faint:#6c86a6;
+    --accent:#4fd1ff;
+    --accent-dim:#2fa9d6;
+    --accent-soft:rgba(79,209,255,0.12);
+    --amber:#ffb454;
+    --amber-soft:rgba(255,180,84,0.14);
+    --done:#34d399;
+    --done-soft:rgba(52,211,153,0.12);
+    --mono:'IBM Plex Mono', monospace;
+    --sans:'IBM Plex Sans', -apple-system, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.65;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  body{
+    background-image:
+      linear-gradient(rgba(125,185,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(125,185,255,0.05) 1px, transparent 1px),
+      linear-gradient(rgba(125,185,255,0.09) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(125,185,255,0.09) 1px, transparent 1px);
+    background-size:24px 24px, 24px 24px, 120px 120px, 120px 120px;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  strong{color:var(--text);font-weight:600;}
+  code{font-family:var(--mono);font-size:0.9em;background:rgba(125,185,255,0.1);color:var(--accent);padding:1px 5px;border-radius:4px;}
+  img{max-width:100%;display:block;}
+  em{color:var(--text);}
+
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px;}
+  .wrap-wide{max-width:1000px;margin:0 auto;padding:0 24px;}
+
+  /* corner-bracket technical frame */
+  .frame{position:relative;}
+  .frame::before,.frame::after{content:'';position:absolute;width:14px;height:14px;border-color:var(--accent);border-style:solid;opacity:0.85;pointer-events:none;}
+  .frame::before{top:-1px;left:-1px;border-width:2px 0 0 2px;}
+  .frame::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0;}
+
+  /* dimension-style divider */
+  .dim{position:relative;height:1px;background:var(--border-strong);margin:16px 0 36px;max-width:120px;}
+  .dim::before,.dim::after{content:'';position:absolute;top:-4px;width:1px;height:9px;background:var(--border-strong);}
+  .dim::before{left:0;} .dim::after{right:0;}
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:100;
+    background:rgba(10,26,48,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  nav .navwrap{
+    max-width:1000px;margin:0 auto;padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+  .logo{font-family:var(--mono);font-weight:600;font-size:15px;color:var(--text);text-decoration:none;letter-spacing:0.3px;}
+  .logo:hover{text-decoration:none;color:var(--accent);}
+  .logo .dot{color:var(--accent);}
+  .nav-links{display:flex;gap:26px;list-style:none;}
+  .nav-links a{
+    color:var(--text-soft);font-size:12.5px;font-weight:500;text-decoration:none;
+    font-family:var(--mono);text-transform:uppercase;letter-spacing:0.8px;
+    position:relative;padding-bottom:3px;
+  }
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--accent);transition:width .25s ease;}
+  .nav-links a:hover{color:var(--accent);text-decoration:none;}
+  .nav-links a:hover::after{width:100%;}
+  @media (max-width:640px){ .nav-links{display:none;} }
+
+  /* HERO */
+  .hero{position:relative;padding:90px 0 70px;overflow:hidden;}
+  #net-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:0.55;pointer-events:none;}
+  .hero .wrap{position:relative;z-index:1;}
+  .eyebrow{
+    font-family:var(--mono);font-size:12.5px;color:var(--accent);
+    font-weight:500;margin-bottom:18px;letter-spacing:1px;text-transform:uppercase;
+    display:flex;align-items:center;gap:8px;
+  }
+  .eyebrow .cursor{display:inline-block;width:8px;height:14px;background:var(--accent);animation:blink 1.1s step-end infinite;}
+  @keyframes blink{0%,49%{opacity:1;}50%,100%{opacity:0;}}
+  h1{font-family:var(--mono);font-size:clamp(32px,5.2vw,50px);font-weight:700;letter-spacing:-1px;line-height:1.14;color:var(--text);margin-bottom:14px;}
+  .hero-role{font-size:18px;color:var(--text-soft);margin-bottom:20px;max-width:600px;}
+  .hero-body{font-size:16px;color:var(--text-soft);max-width:600px;margin-bottom:30px;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;}
+  .btn{
+    font-family:var(--mono);font-size:13.5px;font-weight:600;padding:11px 20px;border-radius:6px;
+    text-decoration:none;display:inline-flex;align-items:center;gap:6px;letter-spacing:0.3px;
+    transition:background .2s,border-color .2s,transform .2s,box-shadow .2s;
+  }
+  .btn:hover{text-decoration:none;transform:translateY(-2px);}
+  .btn-primary{background:var(--accent);color:#04121f;}
+  .btn-primary:hover{background:#7ddcff;box-shadow:0 8px 24px -8px rgba(79,209,255,0.5);}
+  .btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border-strong);}
+  .btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
+  .hero-facts{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--border);border-left:1px solid var(--border);}
+  .fact{flex:1 1 140px;padding:18px 20px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .fact-num{font-family:var(--mono);font-size:24px;font-weight:700;color:var(--accent);}
+  .fact-label{font-family:var(--mono);font-size:11px;color:var(--text-faint);margin-top:4px;text-transform:uppercase;letter-spacing:0.5px;}
+
+  /* SCROLL REVEAL */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in-view{opacity:1;transform:none;}
+
+  /* SECTION */
+  section{padding:70px 0;border-top:1px solid var(--border);position:relative;}
+  .eyebrow-label{
+    font-family:var(--mono);font-size:12px;color:var(--accent);
+    font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;
+  }
+  h2{font-family:var(--mono);font-size:clamp(22px,3vw,28px);font-weight:700;letter-spacing:-0.3px;color:var(--text);margin-bottom:2px;}
+  .section-intro{color:var(--text-soft);max-width:640px;margin-bottom:40px;font-size:15.5px;}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:44px;align-items:start;}
+  @media (max-width:760px){ .about-grid{grid-template-columns:1fr;} }
+  .about-text p{color:var(--text-soft);margin-bottom:16px;font-size:15.5px;}
+  .edu-block{margin-top:24px;padding-top:20px;border-top:1px solid var(--border);}
+  .edu-block h4{font-family:var(--mono);font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-faint);margin-bottom:12px;}
+  .edu-item{margin-bottom:10px;font-size:14px;color:var(--text-soft);}
+  .edu-item b{color:var(--text);font-family:var(--mono);font-weight:600;}
+  .lang-row{display:flex;gap:20px;flex-wrap:wrap;margin-top:10px;font-family:var(--mono);font-size:12px;color:var(--text-soft);}
+  .lang-row .fill{color:var(--accent);}
+  .lang-row .empty{color:var(--border-strong);}
+
+  .skills-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px;}
+  .skill-group{margin-bottom:20px;}
+  .skill-group:last-child{margin-bottom:0;}
+  .skill-group h4{font-family:var(--mono);font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;color:var(--accent);margin-bottom:10px;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:7px;}
+  .chip{font-family:var(--mono);font-size:11.5px;color:var(--text-soft);background:var(--bg-elev);border:1px solid var(--border);border-radius:5px;padding:4px 9px;transition:border-color .2s,color .2s;}
+  .chip:hover{border-color:var(--accent);color:var(--accent);}
+
+  /* PROJECTS */
+  .card{
+    background:var(--surface);border:1px solid var(--border);border-radius:10px;
+    padding:28px;margin-bottom:20px;transition:border-color .25s, transform .25s, box-shadow .25s;
+  }
+  .card:hover{border-color:var(--border-strong);transform:translateY(-3px);box-shadow:0 16px 40px -20px rgba(0,0,0,0.5);}
+  .card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:8px;flex-wrap:wrap;}
+  .card-date{font-family:var(--mono);font-size:11.5px;color:var(--text-faint);}
+  .badge{
+    font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;
+    padding:3px 9px;border-radius:4px;border:1px solid;white-space:nowrap;
+  }
+  .badge.done{background:var(--done-soft);color:var(--done);border-color:rgba(52,211,153,0.35);}
+  .badge.live{background:var(--amber-soft);color:var(--amber);border-color:rgba(255,180,84,0.4);}
+  .card h3{font-family:var(--mono);font-size:19px;font-weight:700;color:var(--text);margin-bottom:2px;}
+  .card .subtitle{font-size:13.5px;color:var(--text-faint);margin-bottom:14px;}
+  .card p{color:var(--text-soft);font-size:14.5px;margin-bottom:16px;}
+  .card .link-line{margin:-6px 0 16px;font-size:13.5px;font-family:var(--mono);}
+
+  .version-chips{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap;}
+  .version-chip{font-family:var(--mono);font-size:10.5px;padding:3px 9px;border-radius:4px;border:1px solid var(--border);color:var(--text-faint);}
+  .version-chip.now{background:var(--accent-soft);border-color:rgba(79,209,255,0.4);color:var(--accent);font-weight:600;}
+
+  .metric-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:18px;}
+  .metric{background:var(--bg-elev);border:1px solid var(--border);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:10px 12px;}
+  .metric .v{font-family:var(--mono);font-size:15.5px;font-weight:700;color:var(--accent);}
+  .metric .l{font-family:var(--mono);font-size:10.5px;color:var(--text-faint);margin-top:2px;text-transform:uppercase;letter-spacing:0.3px;}
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{font-family:var(--mono);font-size:10.5px;color:var(--text-soft);background:var(--bg-elev);border:1px solid var(--border);border-radius:4px;padding:3px 8px;}
+
+  .featured .body-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;}
+  @media (max-width:760px){ .featured .body-grid{grid-template-columns:1fr;} }
+  .diagram-cap{font-family:var(--mono);font-size:11px;color:var(--text-faint);text-align:center;margin-top:8px;text-transform:uppercase;letter-spacing:0.4px;}
+
+  .photo-row{display:flex;flex-wrap:wrap;gap:14px;margin:16px 0 4px;}
+  .photo{border:1px solid var(--border);border-radius:6px;overflow:hidden;flex:1 1 240px;max-width:280px;background:var(--surface);transition:border-color .2s;display:flex;flex-direction:column;}
+  .photo:hover{border-color:var(--accent);}
+  .photo .imgwrap{overflow:hidden;height:170px;background:var(--bg-elev);display:flex;align-items:center;justify-content:center;}
+  .photo img{width:100%;height:100%;object-fit:contain;transition:transform .4s ease;}
+  .photo:hover img{transform:scale(1.05);}
+  .photo .cap{font-family:var(--mono);font-size:10.5px;color:var(--text-faint);padding:8px 10px;border-top:1px solid var(--border);background:var(--surface);text-transform:uppercase;letter-spacing:0.4px;}
+
+  /* CERTIFICATIONS */
+  .cert-highlight{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:28px;}
+  .cert-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 16px;transition:border-color .2s;}
+  .cert-card:hover{border-color:var(--accent);}
+  .cert-card b{display:block;font-size:13.5px;color:var(--text);margin-bottom:3px;}
+  .cert-card span{color:var(--text-faint);font-size:11.5px;font-family:var(--mono);}
+
+  details.cert-details summary{
+    font-family:var(--mono);font-size:13px;font-weight:600;color:var(--accent);cursor:pointer;list-style:none;
+    display:inline-flex;align-items:center;gap:6px;margin-bottom:24px;text-transform:uppercase;letter-spacing:0.4px;
+  }
+  details.cert-details summary::-webkit-details-marker{display:none;}
+  details.cert-details summary::after{content:'▾';font-size:11px;transition:transform .2s;}
+  details.cert-details[open] summary::after{transform:rotate(180deg);}
+
+  .cert-group{margin-bottom:22px;}
+  .cert-group h5{font-family:var(--mono);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-faint);margin-bottom:10px;border-bottom:1px solid var(--border);padding-bottom:6px;}
+  .cert-list{columns:2;column-gap:28px;}
+  @media (max-width:600px){ .cert-list{columns:1;} }
+  .cert-list li{list-style:none;font-size:13px;color:var(--text-soft);margin-bottom:7px;break-inside:avoid;}
+
+  /* EXPERIENCE */
+  .timeline{position:relative;padding-left:28px;}
+  .timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:1px;background:var(--border);}
+  .tl-item{position:relative;padding-bottom:44px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{content:'';position:absolute;left:0;top:4px;width:12px;height:12px;background:var(--bg);border:2px solid var(--accent);transform:rotate(45deg);}
+  .tl-date{font-family:var(--mono);font-size:12px;color:var(--text-faint);margin-bottom:5px;}
+  .tl-item h3{font-family:var(--mono);font-size:17px;font-weight:700;color:var(--text);margin-bottom:2px;}
+  .tl-item .org{color:var(--accent);font-size:13.5px;font-weight:600;margin-bottom:10px;font-family:var(--mono);}
+  .tl-item p{color:var(--text-soft);font-size:14.5px;margin-bottom:14px;}
+
+  .credential-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
+  .credential-link{
+    font-family:var(--mono);font-size:12px;color:var(--done);border:1px solid rgba(52,211,153,0.35);background:var(--done-soft);
+    padding:5px 11px;border-radius:5px;text-decoration:none;display:inline-flex;align-items:center;gap:5px;
+  }
+  .credential-link:hover{text-decoration:none;border-color:var(--done);}
+  .credential-link::before{content:'✓';font-weight:700;}
+
+  .deliverables{background:var(--bg-elev);border:1px solid var(--border);border-radius:8px;padding:16px 18px;}
+  .deliverables .dtitle{font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--text-faint);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:10px;}
+  .deliverables ul{padding-left:18px;}
+  .deliverables li{font-size:13.5px;color:var(--text-soft);margin-bottom:8px;}
+  .deliverables li b{color:var(--text);font-weight:600;}
+
+  /* CONTACT */
+  .contact-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:14px;
+    padding:44px;text-align:center;position:relative;
+  }
+  .contact-card h2{margin-bottom:10px;}
+  .contact-card p{color:var(--text-soft);max-width:460px;margin:0 auto 26px;font-size:15px;}
+  .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  footer{padding:32px 0;text-align:center;color:var(--text-faint);font-size:12px;font-family:var(--mono);border-top:1px solid var(--border);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;animation:none !important;}
+    .reveal{opacity:1 !important;transform:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navwrap">
+    <a href="#top" class="logo">youssef<span class="dot">.</span>zuaiter</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certs">Certifications</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="net-canvas"></canvas>
+  <div class="wrap">
+    <div class="eyebrow">AI Engineering · Open to internships <span class="cursor"></span></div>
+    <h1>Youssef Zuaiter</h1>
+    <p class="hero-role">AI Engineering student at Bahçeşehir University — differential privacy, computer vision, and the occasional embedded system.</p>
+    <p class="hero-body">I work across deep learning research, cloud-native infrastructure, and embedded hardware: a multi-stream autoencoder trained on my own typing data, a hybrid model for catching deepfakes, a Kubernetes-deployed API, an Arduino-based access control system, and a live e-commerce site with an AI chat assistant. Details below, with real numbers attached.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View projects</a>
+      <a href="Youssef_Zuaiter_Resume.pdf" class="btn btn-secondary">Résumé (PDF)</a>
+      <a href="#contact" class="btn btn-secondary">Contact</a>
+    </div>
+    <div class="hero-facts">
+      <div class="fact"><div class="fact-num" data-count="5">0</div><div class="fact-label">Projects</div></div>
+      <div class="fact"><div class="fact-num" data-count="62">0</div><div class="fact-label">Certifications</div></div>
+      <div class="fact"><div class="fact-num" data-count="3">0</div><div class="fact-label">Internships</div></div>
+      <div class="fact"><div class="fact-num" data-count="0.975" data-decimals="3">0.000</div><div class="fact-label">Best val R²</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow-label">01 · About</div>
+    <h2>Background</h2>
+    <div class="dim"></div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm an AI Engineering student at Bahçeşehir University, and most of my time lately goes to two things that don't usually share a sentence: <strong>differential privacy</strong> — training models that can't accidentally memorize the data they saw — and a <strong>hybrid CNN + frequency-domain</strong> setup for spotting deepfakes. Outside of that, I built an Arduino-based access control system from the ground up: NFC, sensors, a servo lock, and enough debugging to teach me embedded systems the hard way.</p>
+        <p>Earlier this year I wrote a CVPR-format paper on privacy-preserving keystroke dynamics, with proper ablations and a drafted patent write-up alongside it — that taught me more about honest experiment design than any course did. I wrapped up a software development internship at Software Persona this summer, which drove home that a model that works in a notebook and a model that works in production are not the same model.</p>
+        <p>I hold certifications from Google, IBM, Stanford/DeepLearning.AI, Vanderbilt, and Duke — covering ML, XAI, AI agents, and cybersecurity. Gaps I'm still actively filling: MLOps and model serving at scale, and math I used to wave my hands through — measure-theoretic probability, PAC learning, that kind of thing.</p>
+
+        <div class="edu-block">
+          <h4>Education</h4>
+          <div class="edu-item"><b>2023 – 2027</b> — BSc Artificial Intelligence / Computer Science, Bahçeşehir University, Istanbul <span style="color:var(--text-faint)">(expected)</span></div>
+          <div class="edu-item"><b>2018 – 2023</b> — High School Diploma, Terra Sancta High School, Jerusalem — score 93/100</div>
+          <div class="lang-row">
+            <span>EN <span class="fill">●●●●●</span></span>
+            <span>AR <span class="fill">●●●●●</span></span>
+            <span>TR <span class="fill">●●●</span><span class="empty">○○</span></span>
+            <span>HE <span class="fill">●●</span><span class="empty">○○○</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-box reveal">
+        <div class="skill-group">
+          <h4>Deep Learning &amp; AI</h4>
+          <div class="chip-row">
+            <span class="chip">PyTorch</span><span class="chip">TensorFlow/Keras</span><span class="chip">CNNs</span>
+            <span class="chip">Autoencoders</span><span class="chip">CBAM Attention</span><span class="chip">FFT-Domain</span>
+            <span class="chip">MobileNetV2</span><span class="chip">Opacus / DP-SGD</span><span class="chip">Agentic AI</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Classical ML &amp; Data Science</h4>
+          <div class="chip-row">
+            <span class="chip">SVM / SVR</span><span class="chip">PCA</span><span class="chip">KMeans / ++ / Bisecting</span>
+            <span class="chip">Regression</span><span class="chip">Feature Engineering</span><span class="chip">GridSearchCV</span>
+            <span class="chip">scikit-learn</span><span class="chip">Pandas</span><span class="chip">NumPy</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>XAI &amp; Interpretability</h4>
+          <div class="chip-row">
+            <span class="chip">LIME</span><span class="chip">SHAP</span><span class="chip">Saliency Maps</span><span class="chip">Grad-CAM</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Embedded &amp; IoT</h4>
+          <div class="chip-row">
+            <span class="chip">Arduino Uno R3</span><span class="chip">NFC/RFID</span><span class="chip">PIR/Ultrasonic/Tilt</span>
+            <span class="chip">Servo</span><span class="chip">LCD</span><span class="chip">IR Remote</span>
+            <span class="chip">I²C/SPI</span><span class="chip">Solar Power</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Cloud &amp; DevOps</h4>
+          <div class="chip-row">
+            <span class="chip">Kubernetes</span><span class="chip">Docker</span><span class="chip">Flask</span>
+            <span class="chip">MongoDB</span><span class="chip">SQL</span><span class="chip">CI/CD</span><span class="chip">Linux/Bash</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Research &amp; Writing</h4>
+          <div class="chip-row">
+            <span class="chip">CVPR-fmt. Papers</span><span class="chip">Ablation Studies</span>
+            <span class="chip">LaTeX</span><span class="chip">A0 Poster Design</span><span class="chip">Statistical Reporting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap-wide">
+    <div class="eyebrow-label">02 · Projects</div>
+    <h2>Five projects, most recent first</h2>
+    <div class="dim"></div>
+    <p class="section-intro">Privacy-preserving deep learning, multimodal computer vision, cloud-native infrastructure, a live e-commerce build, and a bit of embedded hardware — the smaller classroom exercises (SVM, SVR, K-Means) are left out to keep this to real-scope work.</p>
+
+    <div class="card frame reveal">
+      <div class="card-head">
+        <span class="badge live">Live</span>
+        <span class="card-date">2026</span>
+      </div>
+      <h3>Ottilie Tuft</h3>
+      <div class="subtitle">E-Commerce + AI Chat Assistant · Personal Project</div>
+      <p>Built for my sister's handmade tufted-rug business, not a school assignment — a full Next.js storefront (product catalog, gallery, cart, wishlist) deployed on Vercel, plus a "Design a Rug" flow where a customer uploads a reference photo and gets a custom sketch and price estimate back. The chat widget in the corner is a real assistant, not a scripted FAQ: it runs on Claude through the Anthropic API and answers questions about materials, sizing, and how ordering works. Built end to end with Claude as a coding partner, including the assistant now running on the finished site.</p>
+      <div class="link-line"><a href="https://ottillietuft.com" target="_blank" rel="noopener">→ ottillietuft.com</a></div>
+      <div class="photo-row">
+        <div class="photo"><div class="imgwrap"><img src="Portfolio Assets/ottilie_site.png" alt="Ottilie Tuft live website homepage with the Claude-powered chat assistant open"></div><div class="cap">Live site, chat assistant open</div></div>
+      </div>
+      <div class="tag-row">
+        <span class="tag">Next.js</span><span class="tag">Vercel</span><span class="tag">Anthropic API (Claude)</span><span class="tag">E-commerce</span>
+      </div>
+    </div>
+
+    <div class="card frame featured reveal">
+      <div class="card-head">
+        <span class="badge done">Completed</span>
+        <span class="card-date">Dec 2024 – Jul 2026</span>
+      </div>
+      <h3>NeuroLink</h3>
+      <div class="subtitle">Privacy-Preserving Behavioral Baseline Engine · Keystroke Dynamics</div>
+      <div class="version-chips">
+        <span class="version-chip">v1 · WPM forecasting</span>
+        <span class="version-chip">v2 · Ghost simulator</span>
+        <span class="version-chip">v3 · DP autoencoder + CVPR paper</span>
+        <span class="version-chip now">v4 · multi-stream, current</span>
+      </div>
+      <div class="dim" style="margin-top:0"></div>
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-soft);margin-bottom:.5rem">The foundation</p>
+      <p style="color:var(--text-soft);font-size:.95rem">Before any of the architecture below, there's just my own keystroke history — 19 months and counting of everyday typing, none of it collected in a lab. This is what every version of NeuroLink has been trained on. It's a live dataset, not a fixed one, so these numbers are already a little out of date by the time you're reading them.</p>
+      <div class="metric-grid">
+        <div class="metric"><div class="v">50,321</div><div class="l">Typing lessons logged</div></div>
+        <div class="metric"><div class="v">238.9 hrs</div><div class="l">Total practice time</div></div>
+        <div class="metric"><div class="v">6,067,091</div><div class="l">Characters typed</div></div>
+        <div class="metric"><div class="v">34 → 113 WPM</div><div class="l">First 50 → last 50 lessons</div></div>
+        <div class="metric"><div class="v">144.5 WPM</div><div class="l">Peak speed recorded</div></div>
+        <div class="metric"><div class="v">98.1%</div><div class="l">Average accuracy</div></div>
+      </div>
+      <div class="dim"></div>
+      <div class="body-grid">
+        <div>
+          <p>Four rewrites of the same idea: can a model learn <em>my</em> typing well enough to notice when something's off? V1 was a linear regression forecasting my WPM milestones. V2 built a "Ghost" simulator — a digital reflection of my own typing behavior. V3 turned it into a proper research project: an N-of-1 autoencoder trained under differential privacy, written up as a CVPR-format paper with a drafted patent proposal alongside it. V4 is the current version — a shared encoder feeding three separate decoder heads (speed, accuracy, motor), trained on 50,321 lessons across 19 months, with 90-day WPM forecasting layered on top.</p>
+          <div class="metric-grid">
+            <div class="metric"><div class="v">0.9751</div><div class="l">Val R² (weighted)</div></div>
+            <div class="metric"><div class="v">0.8922</div><div class="l">Test R²</div></div>
+            <div class="metric"><div class="v">ε ≈ 9.997</div><div class="l">DP budget (δ=1e-5)</div></div>
+            <div class="metric"><div class="v">18.5 / 18.3 / 63.2%</div><div class="l">Anomaly split (H/M/N)</div></div>
+            <div class="metric"><div class="v">122.9 WPM</div><div class="l">90-day forecast, LDI-adj.</div></div>
+          </div>
+          <div class="tag-row">
+            <span class="tag">PyTorch</span><span class="tag">Opacus / DP-SGD</span><span class="tag">Multi-head Autoencoder</span><span class="tag">Bootstrap CI</span><span class="tag">CVPR fmt.</span>
+          </div>
+        </div>
+        <div>
+          <svg viewBox="0 0 380 240" width="100%" style="max-width:380px;margin:0 auto;display:block" aria-label="NeuroLink 4.0 architecture: shared encoder 18-32-16-10 splitting into Speed, Accuracy, and Motor decoder heads">
+            <g fill="none" stroke="rgba(125,185,255,0.35)" stroke-width="2">
+              <path d="M45,120 L83,120"/>
+              <path d="M99,120 L137,120"/>
+              <path d="M153,120 L185,120"/>
+              <path d="M201,116 L258,58"/>
+              <path d="M201,120 L258,120"/>
+              <path d="M201,124 L258,182"/>
+              <path d="M274,58 L300,58"/>
+              <path d="M274,120 L300,120"/>
+              <path d="M274,182 L300,182"/>
+            </g>
+            <g stroke="#a6bfdc" stroke-width="1.6">
+              <circle cx="30" cy="120" r="15" fill="#0f2542"/>
+              <circle cx="91" cy="120" r="20" fill="#0f2542"/>
+              <circle cx="145" cy="120" r="16" fill="#0f2542"/>
+              <circle cx="193" cy="120" r="12" fill="rgba(79,209,255,0.15)" stroke="#4fd1ff"/>
+              <circle cx="266" cy="58" r="12" fill="#0f2542"/>
+              <circle cx="266" cy="120" r="12" fill="#0f2542"/>
+              <circle cx="266" cy="182" r="12" fill="#0f2542"/>
+              <circle cx="316" cy="58" r="10" fill="#0f2542"/>
+              <circle cx="316" cy="120" r="10" fill="#0f2542"/>
+              <circle cx="316" cy="182" r="10" fill="#0f2542"/>
+            </g>
+            <g font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#eaf2ff" text-anchor="middle">
+              <text x="30" y="123">18</text>
+              <text x="91" y="124">32</text>
+              <text x="145" y="123">16</text>
+              <text x="193" y="123">10</text>
+              <text x="266" y="61">16</text>
+              <text x="266" y="123">16</text>
+              <text x="266" y="185">16</text>
+              <text x="316" y="61">5</text>
+              <text x="316" y="123">6</text>
+              <text x="316" y="185">7</text>
+            </g>
+            <g font-family="IBM Plex Mono, monospace" font-size="9" fill="#4fd1ff" text-anchor="start">
+              <text x="332" y="61">SPEED</text>
+              <text x="332" y="123">ACCURACY</text>
+              <text x="332" y="185">MOTOR</text>
+            </g>
+          </svg>
+          <div class="diagram-cap">Shared encoder → three decoder heads, one per drift stream</div>
+        </div>
+      </div>
+      <div class="dim" style="margin-top:1.75rem"></div>
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-soft);margin-bottom:.5rem">Evaluation dashboard</p>
+      <p style="color:var(--text-soft);font-size:.95rem">The six panels behind the headline numbers above: LDI drift over the full 492-day run, training/validation loss convergence, per-feature R² by decoder head, monthly drift by stream, the 90-day WPM forecast, and the latent muscle-memory signature the encoder learns.</p>
+      <div class="photo-row">
+        <div class="photo" style="flex:1 1 100%;max-width:100%"><div class="imgwrap" style="height:auto;aspect-ratio:1362/2000"><img src="Portfolio Assets/neurolink_dashboard.png" alt="Six-panel NeuroLink 4.0 evaluation dashboard: multi-scale LDI over 492 days with Val R-squared 0.9751 and Test R-squared 0.8922, training convergence loss curves, per-feature R-squared bar chart by decoder head, monthly mean LDI per stream, 90-day WPM forecast, 10-dimensional muscle memory latent signature scatter, circadian drift by hour, and monthly anomaly tier breakdown per stream"></div><div class="cap">Full model evaluation dashboard, generated on my own 19 months of lesson data</div></div>
+      </div>
+    </div>
+
+    <div class="card frame reveal">
+      <div class="card-head">
+        <span class="badge done">Completed</span>
+        <span class="card-date">2026</span>
+      </div>
+      <h3>Deepfake Detection</h3>
+      <div class="subtitle">Spatial-Frequency Attention Network · Computer Vision</div>
+      <p>A three-branch hybrid: pretrained MobileNetV2 spatial branch, a channel-wise attention gate, and an FFT frequency-domain branch fused into a 1,344-dim vector. Trained on FaceForensics++ C23 (128,477 train / 27,493 val / 26,276 test images) with Adam, ReduceLROnPlateau, and label smoothing. The frequency branch is what pushed it past baseline — GAN upsampling leaves periodic spectral artifacts a spatial-only model tends to miss. Honest caveat: cross-dataset generalization to DFDC or Celeb-DF is still untested, and Real-class precision (0.74) has room to improve with focal loss.</p>
+      <div class="metric-grid">
+        <div class="metric"><div class="v">88.59%</div><div class="l">Baseline (MobileNetV2)</div></div>
+        <div class="metric"><div class="v">91.03%</div><div class="l">+ channel attention</div></div>
+        <div class="metric"><div class="v">93.34%</div><div class="l">Hybrid (final)</div></div>
+      </div>
+      <div class="photo-row">
+        <div class="photo"><div class="imgwrap"><img src="Portfolio Assets/deepfake_ablation.png" alt="Ablation study bar chart: baseline 88.59%, attention 91.03%, hybrid 93.34%"></div><div class="cap">Ablation study</div></div>
+        <div class="photo"><div class="imgwrap"><img src="Portfolio Assets/deepfake_confusion_matrix.png" alt="Confusion matrix for the hybrid model on the test set"></div><div class="cap">Confusion matrix, test set</div></div>
+        <div class="photo"><div class="imgwrap"><img src="Portfolio Assets/deepfake_training_curves.png" alt="Training and validation loss and accuracy curves for the hybrid spatial-frequency CNN across 5 epochs"></div><div class="cap">Loss &amp; accuracy curves</div></div>
+        <div class="photo"><div class="imgwrap"><img src="Portfolio Assets/gradcam_1.png" alt="Grad-CAM visualization: original face image next to attention heatmap, correctly predicted as fake"></div><div class="cap">Grad-CAM, example 1</div></div>
+        <div class="photo"><div class="imgwrap"><img src="Portfolio Assets/gradcam_2.png" alt="Grad-CAM visualization: original face image next to attention heatmap, correctly predicted as fake"></div><div class="cap">Grad-CAM, example 2</div></div>
+        <div class="photo"><div class="imgwrap"><img src="Portfolio Assets/gradcam_3.png" alt="Grad-CAM visualization: original face image next to attention heatmap, correctly predicted as fake"></div><div class="cap">Grad-CAM, example 3</div></div>
+        <div class="photo"><div class="imgwrap"><img src="Portfolio Assets/deepfake_predictions_grid.png" alt="Grid of eight fake face examples, all correctly classified as fake by the model"></div><div class="cap">Correct predictions, sample grid</div></div>
+      </div>
+      <div class="tag-row">
+        <span class="tag">MobileNetV2</span><span class="tag">CBAM Attention</span><span class="tag">FFT Branch</span><span class="tag">Grad-CAM</span>
+      </div>
+    </div>
+
+    <div class="card frame reveal">
+      <div class="card-head">
+        <span class="badge done">Completed</span>
+        <span class="card-date">Jun 2026 · CMP3010</span>
+      </div>
+      <h3>Smart Face Recognition Access System</h3>
+      <div class="subtitle">Embedded Systems + Computer Vision · Bahçeşehir University course project, team of 4</div>
+      <div class="link-line"><a href="https://github.com/youssefzuaiter/Smart-Face-Recognition-Access-System" target="_blank" rel="noopener">→ github.com/youssefzuaiter/Smart-Face-Recognition-Access-System</a></div>
+      <p>A 3-layer event-driven access system, not just a locked door: a sensing layer (HC-SR04 ultrasonic, LDR, vibration sensor, RC522 NFC) feeds an Arduino UNO, which hands off over serial to a Python/OpenCV program running LBPH face recognition on a laptop webcam. Known faces get the servo-driven door and a relay-actuated "lock"; unknown ones get denied, logged, and photographed. NFC card/keychain and an IR remote back up the camera for entry and admin control. Built with three teammates (Majd Javadah, Yousef Salama, Walid Kobahalabi) for CMP3010 — my part spanned the Python recognition pipeline and the hardware/software integration over serial.</p>
+      <p>The real engineering was in the conflicts: the IR remote library and Arduino's <code>tone()</code> both claimed Timer 2, so the buzzer was corrupting remote signals — fixed by toggling the buzzer pin manually instead. The NFC reader's constant SPI polling was doing the same to the IR receiver — fixed by polling every 600ms and pausing the IR receiver around each card read. LBPH struggled with glasses and beards until we pushed training data to 150 images per person and retuned the confidence threshold. And the servo/relay drew enough current to brown out the Arduino on USB power, solved with a 9V battery through the barrel jack for a stable regulated supply.</p>
+      <div class="metric-grid">
+        <div class="metric"><div class="v">107 / 140</div><div class="l">Access attempts granted (logged)</div></div>
+        <div class="metric"><div class="v">5</div><div class="l">Enrolled faces</div></div>
+        <div class="metric"><div class="v">~6s</div><div class="l">Recognition decision time</div></div>
+        <div class="metric"><div class="v">1,747 TL</div><div class="l">Total component cost</div></div>
+      </div>
+      <div class="photo-row">
+        <div class="photo"><div class="imgwrap"><img src="Portfolio Assets/proteus_circuit.jpeg" alt="Proteus circuit schematic showing Arduino UNO wired to NFC reader, ultrasonic sensor, IR receiver, LCD, buzzer, LEDs, relay, and vibration sensor"></div><div class="cap">Full circuit, Proteus</div></div>
+      </div>
+      <div class="tag-row">
+        <span class="tag">OpenCV / LBPH</span><span class="tag">Arduino</span><span class="tag">RC522 NFC</span><span class="tag">Serial (pyserial)</span><span class="tag">Team project</span><span class="tag">MIT license</span>
+      </div>
+    </div>
+
+    <div class="card frame reveal">
+      <div class="card-head">
+        <span class="badge done">Completed</span>
+        <span class="card-date">2026</span>
+      </div>
+      <h3>Cloud-Native Bookstore API</h3>
+      <div class="subtitle">Kubernetes &amp; DevOps</div>
+      <p>A containerized Flask + MongoDB CRUD API, deployed to a Kubernetes cluster rather than left as a local script. MongoDB runs as a StatefulSet with a persistent volume claim (headless service, so pods get stable DNS) — the Flask side is a 2-replica Deployment behind a NodePort Service, reading its Mongo connection details from a ConfigMap instead of hardcoding them. The API exposes a <code>/health</code> endpoint that actually pings the database, which is what the liveness and readiness probes hit — the kind of detail that matters in a real cluster and doesn't come up in a tutorial.</p>
+      <div class="tag-row">
+        <span class="tag">Kubernetes</span><span class="tag">Flask</span><span class="tag">MongoDB</span><span class="tag">Docker</span><span class="tag">StatefulSet</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="certs">
+  <div class="wrap">
+    <div class="eyebrow-label">03 · Certifications</div>
+    <h2>62 certificates</h2>
+    <div class="dim"></div>
+    <p class="section-intro">Five below are the ones that actually shaped how I work; the rest are filed underneath.</p>
+
+    <div class="cert-highlight reveal">
+      <div class="cert-card"><b>IBM Machine Learning</b><span>Professional Certificate — IBM</span></div>
+      <div class="cert-card"><b>Deep Learning w/ PyTorch, Keras &amp; TF</b><span>IBM</span></div>
+      <div class="cert-card"><b>AI Agent Developer</b><span>Specialization — Vanderbilt University</span></div>
+      <div class="cert-card"><b>Explainable AI (XAI)</b><span>Specialization — Duke University</span></div>
+      <div class="cert-card"><b>Google Cybersecurity</b><span>Professional Certificate — Google</span></div>
+    </div>
+
+    <details class="cert-details">
+    <summary>Show all 62, filed by topic</summary>
+
+    <div class="cert-group">
+      <h5>AI, ML &amp; Deep Learning</h5>
+      <ul class="cert-list">
+        <li>AI For Everyone</li>
+        <li>Foundations of AI and Machine Learning</li>
+        <li>Introduction to Artificial Intelligence (AI)</li>
+        <li>Google AI Essentials</li>
+        <li>Advanced Learning Algorithms</li>
+        <li>Supervised ML — Regression</li>
+        <li>Supervised ML — Classification</li>
+        <li>Supervised ML — Regression and Classification</li>
+        <li>Unsupervised Machine Learning</li>
+        <li>Unsupervised Learning, Recommenders, Reinforcement Learning</li>
+        <li>Machine Learning Capstone</li>
+        <li>Neural Networks and Deep Learning</li>
+        <li>Deep Learning and Reinforcement Learning</li>
+        <li>Deep Learning with Keras and Tensorflow</li>
+        <li>Deep Learning with PyTorch</li>
+        <li>Introduction to Deep Learning &amp; Neural Networks with Keras</li>
+        <li>Introduction to Neural Networks and PyTorch</li>
+        <li>AI Capstone Project with Deep Learning</li>
+        <li>Exploratory Data Analysis for Machine Learning</li>
+        <li>Machine Learning (Specialization)</li>
+      </ul>
+    </div>
+
+    <div class="cert-group">
+      <h5>Explainability, Agents &amp; Generative AI</h5>
+      <ul class="cert-list">
+        <li>Developing Explainable AI (XAI)</li>
+        <li>Explainable Machine Learning (XAI)</li>
+        <li>Interpretable Machine Learning</li>
+        <li>AI Agents and Agentic AI Architecture in Python</li>
+        <li>AI Agents and Agentic AI with Python &amp; Generative AI</li>
+        <li>Trustworthy Generative AI</li>
+        <li>OpenAI GPTs — Creating Custom AI Assistants</li>
+        <li>ChatGPT Advanced Data Analysis</li>
+        <li>Prompt Engineering for ChatGPT</li>
+      </ul>
+    </div>
+
+    <div class="cert-group">
+      <h5>Cybersecurity</h5>
+      <ul class="cert-list">
+        <li>Foundations of Cybersecurity</li>
+        <li>Play It Safe — Manage Security Risks</li>
+        <li>Connect and Protect — Networks and Network Security</li>
+        <li>Assets, Threats, and Vulnerabilities</li>
+        <li>Sound the Alarm — Detection and Response</li>
+        <li>Automate Cybersecurity Tasks with Python</li>
+        <li>Put It to Work — Prepare for Cybersecurity Jobs</li>
+        <li>Tools of the Trade — Linux and SQL</li>
+      </ul>
+    </div>
+
+    <div class="cert-group">
+      <h5>Cloud, Systems &amp; Software Engineering</h5>
+      <ul class="cert-list">
+        <li>Introduction to Microsoft Azure Cloud Services</li>
+        <li>Cloud Virtualization, Containers and APIs</li>
+        <li>Microservice Architectures</li>
+        <li>Crash Course on Python</li>
+        <li>Intro to Programming</li>
+        <li>Python (fundamentals)</li>
+        <li>Electronic Arts — Software Engineering Job Simulation</li>
+      </ul>
+    </div>
+
+    <div class="cert-group">
+      <h5>Statistics &amp; R</h5>
+      <ul class="cert-list">
+        <li>R &amp; RStudio fundamentals — 10 modules covering syntax, data import, descriptive statistics, probability distributions, and linear regression</li>
+      </ul>
+    </div>
+
+    <div class="cert-group">
+      <h5>Conferences &amp; Events</h5>
+      <ul class="cert-list">
+        <li>BAU AI Summit 2025</li>
+        <li>BAU AI Summit 2026</li>
+        <li>BAU AI Summit 2026 (Certificate 2)</li>
+      </ul>
+    </div>
+    </details>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow-label">04 · Experience</div>
+    <h2>Where I've worked</h2>
+    <div class="dim"></div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-date">Ongoing</div>
+        <h3>AI Intern</h3>
+        <div class="org">Software Persona / TNC Group — Istanbul (remote)</div>
+        <p>A second, separate track with Software Persona — this one AI-focused rather than software-development-focused. Supporting the team on Python programming tasks and web development work, contributing to AI-assisted content workflows, and taking part in AI/data science projects across data collection, preprocessing, model development, testing, and reporting.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-date">Jun 15 – Jul 20, 2026 · Completed</div>
+        <h3>Software Development Intern</h3>
+        <div class="org">Software Persona / TNC Group — Istanbul</div>
+        <p>Bridged academic ML work with production software engineering — real version control, code review, and deployment workflows, not notebook cells. Part of the 16th-term Professional Development Program, working across mobile design, frontend, and database tracks. Most of the term centered on one real client brief — Ottilie Tuft, a handmade tufted-rug business — carried from Figma design through to a working web app and a companion mobile app.</p>
+        <div class="credential-row">
+          <a class="credential-link" href="SoftwarePersona_Certificate_of_Completion.pdf" target="_blank" rel="noopener">Certificate of completion</a>
+          <a class="credential-link" href="SoftwarePersona_Reference_Letter.pdf" target="_blank" rel="noopener">Reference letter</a>
+        </div>
+        <div class="deliverables">
+          <div class="dtitle">What I shipped</div>
+          <ul>
+            <li><b>Ottilie Tuft — UI/UX design.</b> A 3-screen Figma mobile app for the business, built from their actual logo and product photography — a 7-color system derived from the brand mark, a two-typeface hierarchy (Cormorant Garamond for headings, Inter for body/UI), fully componentized with Auto Layout, reusable text styles, and variant-driven button/chip states.</li>
+            <li><b>Ottilie Tuft Commission Tracker</b> — <a href="https://github.com/youssefzuaiter/ottilie-tuft-tracker" target="_blank" rel="noopener">code ↗</a>. A React + Tailwind web app built on that same design system: log a customer name and rug design, then cycle each commission through Requested → In Progress → Completed with a click, persisted locally so the board survives a refresh.</li>
+            <li><b>Ottilie Tuft Catalog</b> — <a href="https://github.com/youssefzuaiter/ottilie-tuft-catalog-" target="_blank" rel="noopener">code ↗</a>. A companion Flutter mobile app: a GridView catalog of six real commissioned rugs — a brand-logo rug, a car portrait, Arabic calligraphy pieces — with detail screens routed via <code>Navigator</code> and a bundled JSON data source.</li>
+            <li><b>NovaStoreDB.</b> A 5-table relational schema (Categories, Customers, Products, Orders, OrderDetails) for a fictional e-commerce platform, with 6 analytical SQL queries, a reusable view, and a backup command — full DDL through DQL.</li>
+          </ul>
+        </div>
+        <div class="photo-row">
+          <div class="photo"><div class="imgwrap"><img src="Portfolio Assets/figma_login.png" alt="Ottilie Tuft Figma design — login screen"></div><div class="cap">Figma — login screen</div></div>
+          <div class="photo"><div class="imgwrap"><img src="Portfolio Assets/figma_home.png" alt="Ottilie Tuft Figma design — home screen with grid of six rug commissions"></div><div class="cap">Figma — home screen</div></div>
+          <div class="photo"><div class="imgwrap"><img src="Portfolio Assets/figma_detail.png" alt="Ottilie Tuft Figma design — rug detail screen with size selector"></div><div class="cap">Figma — detail screen</div></div>
+          <div class="photo"><div class="imgwrap"><img src="Portfolio Assets/ottilie_tracker_screenshot.png" alt="Ottilie Tuft Commission Tracker web app screenshot"></div><div class="cap">The tracker, running</div></div>
+          <div class="photo"><div class="imgwrap"><img src="Portfolio Assets/novastore_screenshot.png" alt="NovaStoreDB entity-relationship diagram showing five linked tables"></div><div class="cap">NovaStoreDB, ER diagram</div></div>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-date">Mar – Apr 2026 · Completed</div>
+        <h3>IT &amp; Technical Intern</h3>
+        <div class="org">Arch of Sigma / TNC Group — Istanbul</div>
+        <p>An integrated cross-disciplinary project spanning data processing, technical drawing, automation, and 3D visualization — outside my usual ML lane on purpose. Recognized by supervising engineers for analytical thinking and fast adaptation across unfamiliar toolchains.</p>
+        <div class="credential-row">
+          <a class="credential-link" href="ArchOfSigma_Certificate_of_Completion.pdf" target="_blank" rel="noopener">Certificate of completion</a>
+          <a class="credential-link" href="ArchOfSigma_Reference_Letter.pdf" target="_blank" rel="noopener">Reference letter</a>
+        </div>
+        <div class="deliverables">
+          <div class="dtitle">What I shipped</div>
+          <ul>
+            <li><b>AutoCAD technical drawing</b> of a kids' bedroom — wall layout, furniture placement, and dimensioning worked through in stages — paired with an isometric 3D build of the same room in Blender.</li>
+            <li><b>Excel-based data processing.</b> A multi-sheet workbook built around a sample employee/sales dataset — separate tabs for data cleaning, text formulas, routine calculations, VLOOKUP, and pivot tables with charts — plus a small console Python CRUD app (task manager with persistent file storage) rounding out the automation piece.</li>
+          </ul>
+        </div>
+        <div class="photo-row">
+          <div class="photo"><div class="imgwrap"><img src="Portfolio Assets/autocad_floorplan.png" alt="AutoCAD floor plan of a kids' bedroom, shown in four stages from outline to full furniture and dimensioning"></div><div class="cap">The floor plan, four passes</div></div>
+          <div class="photo"><div class="imgwrap"><img src="Portfolio Assets/isometric_room.png" alt="Isometric 3D bedroom render built in Blender"></div><div class="cap">The same room, in Blender</div></div>
+          <div class="photo"><div class="imgwrap"><img src="Portfolio Assets/excel_project_screenshot.png" alt="Excel workbook with employee data and multiple sheet tabs for pivot tables, VLOOKUP, and formulas"></div><div class="cap">The Excel workbook</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow-label">05 · Contact</div>
+    <div class="contact-card frame reveal">
+      <h2>Get in touch</h2>
+      <p>Open to AI/ML internships, research collaborations, and hard problems in privacy-preserving or embedded AI.</p>
+      <div class="contact-links">
+        <a href="mailto:youssef.zuaiter2005@gmail.com" class="btn btn-primary">Email me</a>
+        <a href="https://github.com/youssefzuaiter" target="_blank" rel="noopener" class="btn btn-secondary">GitHub</a>
+        <a href="https://www.linkedin.com/in/youssef-zuaiter/" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Youssef Zuaiter — last updated August 2026</footer>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- scroll reveal ---- */
+  var revealEls = document.querySelectorAll('.reveal');
+  if(reduceMotion || !('IntersectionObserver' in window)){
+    revealEls.forEach(function(el){ el.classList.add('in-view'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- animated stat counters ---- */
+  var counters = document.querySelectorAll('[data-count]');
+  function animateCount(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    var duration = 1100;
+    var start = null;
+    function step(ts){
+      if(!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var val = target * eased;
+      el.textContent = val.toFixed(decimals);
+      if(progress < 1) requestAnimationFrame(step);
+      else el.textContent = target.toFixed(decimals);
+    }
+    if(reduceMotion){ el.textContent = target.toFixed(decimals); }
+    else requestAnimationFrame(step);
+  }
+  counters.forEach(animateCount);
+
+  /* ---- neural network canvas background ---- */
+  var canvas = document.getElementById('net-canvas');
+  if(canvas){
+    var ctx = canvas.getContext('2d');
+    var hero = canvas.parentElement;
+    var nodes = [];
+    var W, H, DPR;
+
+    function resize(){
+      var rect = hero.getBoundingClientRect();
+      DPR = Math.min(window.devicePixelRatio || 1, 2);
+      W = rect.width; H = rect.height;
+      canvas.width = W * DPR; canvas.height = H * DPR;
+      canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+      ctx.setTransform(DPR,0,0,DPR,0,0);
+      var count = Math.min(60, Math.max(24, Math.floor(W / 24)));
+      nodes = [];
+      for(var i=0;i<count;i++){
+        nodes.push({
+          x: Math.random()*W, y: Math.random()*H,
+          vx: (Math.random()-0.5)*0.18, vy: (Math.random()-0.5)*0.18
+        });
+      }
+    }
+
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      var linkDist = 130;
+      for(var i=0;i<nodes.length;i++){
+        var n = nodes[i];
+        n.x += n.vx; n.y += n.vy;
+        if(n.x < 0 || n.x > W) n.vx *= -1;
+        if(n.y < 0 || n.y > H) n.vy *= -1;
+      }
+      for(var i=0;i<nodes.length;i++){
+        for(var j=i+1;j<nodes.length;j++){
+          var a = nodes[i], b = nodes[j];
+          var dx = a.x-b.x, dy = a.y-b.y;
+          var dist = Math.sqrt(dx*dx+dy*dy);
+          if(dist < linkDist){
+            ctx.strokeStyle = 'rgba(79,209,255,' + (0.16 * (1 - dist/linkDist)) + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
+            ctx.stroke();
+          }
+        }
+      }
+      for(var i=0;i<nodes.length;i++){
+        ctx.fillStyle = 'rgba(79,209,255,0.55)';
+        ctx.beginPath();
+        ctx.arc(nodes[i].x, nodes[i].y, 1.6, 0, Math.PI*2);
+        ctx.fill();
+      }
+    }
+
+    function loop(){ draw(); requestAnimationFrame(loop); }
+
+    window.addEventListener('resize', resize);
+    resize();
+    if(reduceMotion){ draw(); }
+    else { requestAnimationFrame(loop); }
+  }
+})();
+</script>
+
+</body>
+</html>
